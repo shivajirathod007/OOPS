@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Class2; // Forward declaration
+
+class Class1
+{
+private:
+    int m1 = 70;
+
+public:
+    // Class1(int m) : m1(m) {}
+
+    friend float calculateAverage(Class1, Class2);
+};
+
+class Class2
+{
+private:
+    int m2 = 50;
+
+public:
+    // Class2(int m) : m2(m) {}
+
+    friend float calculateAverage(Class1, Class2);
+};
+
+float calculateAverage(Class1 c1, Class2 c2)
+{
+    return (float)(c1.m1 + c2.m2) / 2.0;
+}
+
+int main()
+{
+
+    Class1 class1Obj;
+    Class2 class2Obj;
+
+    float average = calculateAverage(class1Obj, class2Obj);
+
+    cout << "Average marks: " << average << endl;
+
+    return 0;
+}
