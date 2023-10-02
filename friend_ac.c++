@@ -50,9 +50,6 @@ void exchange(c1 &x, c2 &y)
     y.value2 = x.value ^ y.value2;
     x.value = x.value ^ y.value2;
 }
-
-}
-
 int main()
 {
 
