@@ -36,9 +36,21 @@ public:
 };
 void exchange(c1 &x, c2 &y)
 {
-    int temp = x.value;
-    x.value = y.value2;
-    y.value2 = temp;
+    // int temp = x.value;
+    // x.value = y.value2;
+    // y.value2 = temp;
+
+    // without using third variable
+    // x.value = x.value - y.value2;
+    // y.value2 = x.value + y.value2;
+    // x.value = y.value2 - x.value;
+
+    // bitwise operator
+    x.value = x.value ^ y.value2;
+    y.value2 = x.value ^ y.value2;
+    x.value = x.value ^ y.value2;
+}
+
 }
 
 int main()
