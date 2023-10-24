@@ -88,4 +88,23 @@ int main()
 }
 
 
+
+
+#include <iostream>
+
+int main() {
+    int myArray[5] = {1, 2, 3, 4, 5};
+    
+    // Using the array as a pointer
+    int* pointerToArray = myArray;
+    
+    // Access elements using the pointer
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Element " << i << ": " << *(pointerToArray + i) << std::endl;
+    }
+    
+    return 0;
+}
+
+
 */
